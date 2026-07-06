@@ -14,3 +14,12 @@ test('README contains ACCEPTANCE marker', () => {
     'README.md must contain the exact line "ACCEPTANCE: JAR-46"'
   );
 });
+
+
+test('README contains JAR-47 acceptance marker', () => {
+  const readme = fs.readFileSync(path.join(__dirname, 'README.md'), 'utf8');
+  assert.ok(
+    readme.split('\n').includes('ACCEPTANCE: JAR-47'),
+    'README.md must contain the exact line "ACCEPTANCE: JAR-47"'
+  );
+});
