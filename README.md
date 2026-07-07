@@ -7,6 +7,8 @@ ACCEPTANCE: JAR-46
 
 REVIEWER_IDENTITY: JAR-66
 
+SCHEDULER: JAR-69
+
 ## Usage
 
 ### Health check
@@ -21,4 +23,20 @@ It writes a JSON object to stdout with `ok: true` and an ISO 8601 `timestamp`, e
 
 ```
 {"ok":true,"timestamp":"2026-07-07T00:00:00.000Z"}
+```
+
+### Scheduler staged proof (JAR-69)
+
+Run the scheduler to stage its jobs and print a scheduler snapshot as JSON, then exit 0:
+
+```
+node scripts/scheduler.js
+```
+
+It stages a fixed set of jobs, orders them by ascending priority, and writes a
+snapshot to stdout where `proof` is `JAR-69` and every job is in the `staged`
+state, e.g.:
+
+```
+{"proof":"JAR-69","ok":true,"staged":[{"id":"ingest","priority":10,"order":0,"state":"staged"},{"id":"transform","priority":20,"order":1,"state":"staged"},{"id":"publish","priority":30,"order":2,"state":"staged"}],"count":3,"timestamp":"2026-07-07T00:00:00.000Z"}
 ```
