@@ -5,6 +5,8 @@ Public by design: `provisionWorktree` fetches with no auth; only the push side i
 
 ACCEPTANCE: JAR-46
 
+REVIEWER_IDENTITY: JAR-66
+
 ## Usage
 
 ### Health check
