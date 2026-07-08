@@ -22,3 +22,17 @@ It writes a JSON object to stdout with `ok: true` and an ISO 8601 `timestamp`, e
 ```
 {"ok":true,"timestamp":"2026-07-07T00:00:00.000Z"}
 ```
+
+### JAR-79 phase 1 staged smoke
+
+Run the JAR-79 phase 1 smoke script to print a JSON result object and exit 0:
+
+```
+node scripts/jar79-phase1-smoke.js
+```
+
+It writes a JSON object to stdout with `ok: true` and `name: "jar79-phase1"`:
+
+```
+{"ok":true,"name":"jar79-phase1"}
+```
